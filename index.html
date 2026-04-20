@@ -41,11 +41,246 @@
             z-index: 10;
             scrollbar-width: thin;
             scrollbar-color: rgba(0,0,0,0.12) transparent;
+            display: block;
         }
         
         .screen-overlay::-webkit-scrollbar { width: 5px; }
         .screen-overlay::-webkit-scrollbar-track { background: transparent; }
         .screen-overlay::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 3px; }
+
+        /* ===== Mobile styles — scrap of paper ===== */
+        @media (max-width: 768px) {
+            html {
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            body {
+                height: auto !important;
+                min-height: 100vh;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                background: #3a2316 !important;
+                background-image:
+                    radial-gradient(ellipse at 30% 15%, rgba(255, 220, 170, 0.10) 0%, transparent 60%),
+                    radial-gradient(ellipse at 75% 85%, rgba(90, 50, 25, 0.25) 0%, transparent 60%),
+                    linear-gradient(165deg, #4a2e1c 0%, #3a2316 60%, #2e1b10 100%) !important;
+            }
+
+            .scene {
+                position: static !important;
+                overflow: visible !important;
+                height: auto !important;
+                min-height: 100vh;
+                width: 100% !important;
+                padding: 24px 14px 36px !important;
+                box-sizing: border-box;
+                background: transparent !important;
+            }
+
+            /* Neutralize the container — it wraps the overlay, so we
+               can't hide it, but we can strip its absolute positioning. */
+            .image-container,
+            #imageContainer {
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                display: block !important;
+                visibility: visible !important;
+                background: transparent !important;
+            }
+
+            .bg-image,
+            .lamp-glow,
+            #bgImage,
+            #lampGlow {
+                display: none !important;
+            }
+
+            /* The paper */
+            .screen-overlay,
+            #screenOverlay {
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                max-height: none !important;
+                min-height: 300px !important;
+                left: auto !important;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin: 0 !important;
+                padding: 30px 22px 36px !important;
+                display: block !important;
+                overflow: visible !important;
+                transform: none !important;
+
+                background-color: #f4ecda !important;
+                background-image:
+                    radial-gradient(ellipse at 20% 10%, rgba(184, 74, 45, 0.04) 0%, transparent 50%),
+                    radial-gradient(ellipse at 85% 70%, rgba(80, 50, 20, 0.05) 0%, transparent 55%),
+                    repeating-linear-gradient(
+                        23deg,
+                        rgba(120, 80, 40, 0.015) 0px,
+                        rgba(120, 80, 40, 0.015) 1px,
+                        transparent 1px,
+                        transparent 3px
+                    ),
+                    repeating-linear-gradient(
+                        -61deg,
+                        rgba(120, 80, 40, 0.02) 0px,
+                        rgba(120, 80, 40, 0.02) 1px,
+                        transparent 1px,
+                        transparent 4px
+                    ) !important;
+
+                box-shadow:
+                    0 2px 8px rgba(0, 0, 0, 0.35),
+                    0 10px 28px rgba(0, 0, 0, 0.4) !important;
+
+                border-radius: 2px;
+            }
+
+            .header {
+                padding: 4px 4px 14px 4px !important;
+                border-bottom: none !important;
+                text-align: center;
+                background: transparent !important;
+            }
+
+            .header::after {
+                content: '';
+                display: block;
+                margin: 14px auto 0;
+                width: 60%;
+                height: 1px;
+                background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(120, 70, 40, 0.3) 20%,
+                    rgba(120, 70, 40, 0.45) 50%,
+                    rgba(120, 70, 40, 0.3) 80%,
+                    transparent 100%);
+            }
+
+            .title {
+                font-size: 26px !important;
+                letter-spacing: 0.08em;
+                color: #2a1810 !important;
+                line-height: 1.15;
+            }
+
+            .tagline {
+                font-size: 13px !important;
+                margin-top: 0.5em;
+                color: #5a3a24 !important;
+                font-style: italic;
+            }
+
+            .nav-tabs {
+                gap: 0.9em 1.2em !important;
+                flex-wrap: wrap;
+                padding: 0.8em 0 0.3em !important;
+                border-bottom: none !important;
+                margin-top: 0.6em;
+                justify-content: center;
+            }
+
+            .nav-tab {
+                font-size: 12px !important;
+                color: #6b4a30 !important;
+                padding: 0.15em 0.1em;
+                border-bottom: 1px dotted transparent;
+            }
+
+            .nav-tab.active {
+                color: #b84a2d !important;
+                border-bottom: 1px solid #b84a2d !important;
+            }
+
+            .page {
+                padding: 6px 2px 12px 2px !important;
+            }
+
+            .section-title {
+                font-size: 19px !important;
+                color: #2a1810 !important;
+                margin-top: 1.3em;
+            }
+
+            .body-text {
+                font-size: 14px !important;
+                color: #3d2817 !important;
+                line-height: 1.7;
+            }
+
+            .bullet-list {
+                font-size: 14px !important;
+                color: #3d2817 !important;
+                line-height: 1.75;
+                margin: 0.4em 0 0.8em 0.6em !important;
+            }
+
+            .highlight {
+                color: #b84a2d !important;
+            }
+
+            .contact-link {
+                color: #b84a2d !important;
+                text-decoration: underline;
+            }
+
+            .btn {
+                font-size: 13px !important;
+                padding: 0.7em 1.8em !important;
+                border-color: #5a3a24 !important;
+                color: #5a3a24 !important;
+                background: transparent !important;
+            }
+
+            .btn.primary {
+                background: #b84a2d !important;
+                border-color: #b84a2d !important;
+                color: #f4ecda !important;
+            }
+
+            .apply-layout {
+                flex-direction: column !important;
+                gap: 25px !important;
+                padding-right: 0 !important;
+            }
+
+            .index-card {
+                display: none !important;
+            }
+
+            .faq-item {
+                border-bottom: 1px dashed rgba(120, 70, 40, 0.25) !important;
+            }
+
+            .faq-question {
+                font-size: 13px !important;
+            }
+
+            .faq-answer {
+                font-size: 13px !important;
+                color: #3d2817 !important;
+                line-height: 1.7;
+            }
+
+            .faq-item.open .faq-answer {
+                max-height: 2000px !important;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 380px) {
+            .title { font-size: 22px !important; }
+            .tagline { font-size: 12px !important; }
+            .nav-tabs { gap: 0.7em 1em !important; }
+            .nav-tab { font-size: 11px !important; }
+            .screen-overlay,
+            #screenOverlay { padding: 26px 16px 32px !important; }
+        }
 
         /* Header */
         .header {
@@ -553,36 +788,6 @@
                     setTimeout(typeWriter, 1000);
                 </script>
                 
-                <script>
-                    const quotes = [
-                        { text: '"As long as I have questions and no answers I\'ll keep on writing."', author: '— Clarice Lispector' },
-                        { text: '"Each of us is several, is many, is a profusion of selves."', author: '— Fernando Pessoa' },
-                        { text: '"Loneliness does not come from having no people about one, but from being unable to communicate the things that seem important to oneself."', author: '— C. G. Jung' },
-                        { text: '"The future is already here — it\'s just not very evenly distributed."', author: '— William Gibson' },
-                        { text: '"The role of a writer is not to say what we all can say, but what we are unable to say."', author: '— Anaïs Nin' },
-                        { text: '"Writing is thinking. To write well is to think clearly. That\'s why it\'s so hard."', author: '— David McCullough' }
-                    ];
-                    
-                    let currentQuote = 0;
-                    
-                    function rotateQuotes() {
-                        const textEl = document.getElementById('quoteText');
-                        const authorEl = document.getElementById('quoteAuthor');
-                        const container = textEl.parentElement;
-                        
-                        container.style.opacity = '0';
-                        
-                        setTimeout(() => {
-                            currentQuote = (currentQuote + 1) % quotes.length;
-                            textEl.textContent = quotes[currentQuote].text;
-                            authorEl.textContent = quotes[currentQuote].author;
-                            container.style.opacity = '1';
-                        }, 600);
-                    }
-                    
-                    setInterval(rotateQuotes, 6000);
-                </script>
-                
                 <!-- FAQ PAGE -->
                 <div class="page" id="page-faq">
                     <div class="screen-content">
@@ -650,7 +855,7 @@
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFaq(this)">Can I donate to support the cause?</div>
-                            <div class="faq-answer">Yes! There will be a "supporter ticket" option for attendees, which will help us offer spaces to those who otherwise couldn't attend. If you'd like to donate and not attend, please reach out to us at [email]. We don't have any funding to run this project, so any amount of support is welcome.</div>
+                            <div class="faq-answer">Yes! There will be a "supporter ticket" option for attendees, which will help us offer spaces to those who otherwise couldn't attend. If you'd like to donate and not attend, please reach out to us at inscribe.residency@gmail.com. We don't have any funding to run this project, so any amount of support is welcome.</div>
                         </div>
                         
                         <div class="faq-item">
@@ -665,7 +870,7 @@
                     <div class="screen-content">
                         <h2 class="section-title" style="margin-top: 0;">Support</h2>
                         <p class="body-text">We don't have any funding to run this project, so any amount of support is welcome — and would help reduce ticket costs for the residency + help allow lower-income participants to join.</p>
-                        <p class="body-text">To donate, please send an email to <a href="mailto:hello@inscribe.eu" class="contact-link">[email]</a>.</p>
+                        <p class="body-text">To donate, please send an email to <a href="mailto:inscribe.residency@gmail.com" class="contact-link">inscribe.residency@gmail.com</a>.</p>
                     </div>
                 </div>
                 
@@ -675,7 +880,7 @@
                         <h2 class="section-title" style="margin-top: 0;">Contact</h2>
                         <p class="body-text">The Inscribe Residency is being run by <a href="https://x.com/chiaragerosa" class="contact-link" target="_blank">Chiara</a> and <a href="https://x.com/yearning_slav" class="contact-link" target="_blank">Sofia</a>, with support from the lovely folks at <a href="https://www.eltilo.casa/" target="_blank" class="contact-link">Casa Tilo</a>.</p>
                         <p class="body-text">We came up with the idea for this residency in early 2026, after feeling Europe lacked spaces for its writers, thinkers and creatives to gather and co-create. This is our first time running this residency — so you'll be joining a space of experimentation! We'd be excited to run future editions if successful.</p>
-                        <p class="body-text">For any questions, you can contact us at <a href="mailto:hello@inscribe.eu" class="contact-link">[email]</a>.</p>
+                        <p class="body-text">For any questions, you can contact us at <a href="mailto:inscribe.residency@gmail.com" class="contact-link">inscribe.residency@gmail.com</a>.</p>
                     </div>
                 </div>
                     
@@ -690,9 +895,17 @@
         const LAMP_X = 1050, LAMP_Y = 300;
         
         function positionElements() {
-            const container = document.getElementById('imageContainer');
             const overlay = document.getElementById('screenOverlay');
             const lamp = document.getElementById('lampGlow');
+            
+            // On mobile, clear any inline styles and let CSS handle it
+            if (window.innerWidth <= 768) {
+                if (overlay) overlay.removeAttribute('style');
+                if (lamp) lamp.removeAttribute('style');
+                return;
+            }
+            
+            const container = document.getElementById('imageContainer');
             
             const containerW = container.offsetWidth;
             const containerH = container.offsetHeight;
