@@ -363,18 +363,18 @@
                 <div class="page" id="page-apply">
                     <div class="screen-content apply-layout">
                         
-                        <div class="paper-container">
-                            <div class="vintage-paper">
-                                <div class="quote-container">
-                                    <p class="quote-text" id="quoteText">"As long as I have questions and no answers I'll keep on writing."</p>
-                                    <p class="quote-author" id="quoteAuthor">— Clarice Lispector</p>
-                                </div>
+                        <div class="index-card">
+                            <div class="card-lines"></div>
+                            <div class="card-margin"></div>
+                            <div class="quote-content">
+                                <p class="typewriter-text" id="typewriterText"></p>
+                                <p class="typewriter-author" id="typewriterAuthor"></p>
                             </div>
                         </div>
                         
                         <div class="apply-text">
-                            <p class="body-text" style="margin-bottom: 0.5em;">Applications coming soon.</p>
-                            <p class="body-text" style="opacity: 0.7; font-size: clamp(8px, 0.9vw, 11px);">We expect to confirm attendees by the end of June.</p>
+                            <p class="body-text" style="margin-bottom: 0.8em;">Applications opening soon.</p>
+                            <button class="btn primary">Apply</button>
                         </div>
                         
                     </div>
@@ -385,77 +385,115 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        gap: clamp(15px, 3vw, 40px);
+                        gap: clamp(30px, 6vw, 65px);
                         min-height: 70%;
-                        padding-top: 2em;
-                        padding-right: clamp(10px, 3vw, 30px);
+                        padding-top: 1em;
+                        padding-right: clamp(20px, 5vw, 50px);
                     }
                     
                     .apply-text {
                         text-align: left;
                     }
                     
-                    .paper-container {
-                        filter: drop-shadow(3px 4px 8px rgba(0,0,0,0.3));
-                    }
-                    
-                    .vintage-paper {
-                        width: clamp(170px, 30vw, 280px);
-                        min-height: clamp(110px, 18vw, 160px);
-                        padding: clamp(14px, 2.5vw, 24px);
-                        background: 
-                            linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%),
-                            linear-gradient(180deg, #f4ede0 0%, #e8dfcc 40%, #ddd4c0 100%);
+                    .index-card {
+                        width: clamp(180px, 32vw, 280px);
+                        height: clamp(105px, 18vw, 155px);
+                        background: linear-gradient(180deg, #f7f3e3 0%, #f0ebda 50%, #e8e2d0 100%);
                         position: relative;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         transform: rotate(-1.5deg);
-                        clip-path: polygon(
-                            0% 2%, 3% 0%, 8% 1%, 15% 0%, 22% 1%, 30% 0%, 38% 0.5%, 45% 0%, 52% 1%, 60% 0%, 68% 0.5%, 75% 0%, 82% 1%, 90% 0%, 95% 0.5%, 100% 1%,
-                            100% 5%, 99% 12%, 100% 20%, 99.5% 28%, 100% 35%, 99% 42%, 100% 50%, 99% 58%, 100% 65%, 99.5% 72%, 100% 80%, 99% 88%, 100% 95%,
-                            98% 100%, 92% 99%, 85% 100%, 78% 99.5%, 70% 100%, 62% 99%, 55% 100%, 48% 99%, 40% 100%, 32% 99.5%, 25% 100%, 18% 99%, 10% 100%, 5% 99%, 0% 100%,
-                            0% 95%, 1% 88%, 0% 80%, 0.5% 72%, 0% 65%, 1% 58%, 0% 50%, 1% 42%, 0% 35%, 0.5% 28%, 0% 20%, 1% 12%, 0% 5%
-                        );
-                        box-shadow:
-                            inset 0 0 40px rgba(139,109,76,0.1),
-                            inset 0 0 4px rgba(0,0,0,0.05);
+                        border-radius: 2px;
+                        box-shadow: 
+                            2px 3px 8px rgba(0,0,0,0.15),
+                            inset 0 0 20px rgba(139,109,76,0.05);
+                        overflow: hidden;
                     }
                     
-                    .vintage-paper::before {
+                    .index-card::before {
                         content: '';
                         position: absolute;
                         top: 0;
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-                        opacity: 0.07;
+                        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+                        opacity: 0.04;
                         mix-blend-mode: multiply;
                         pointer-events: none;
                     }
                     
-                    .quote-container {
-                        text-align: center;
-                        transition: opacity 0.6s ease;
+                    .card-lines {
+                        position: absolute;
+                        top: 16px;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: repeating-linear-gradient(
+                            transparent,
+                            transparent 17px,
+                            #b8d4e8 17px,
+                            #b8d4e8 18px
+                        );
+                        opacity: 0.5;
+                    }
+                    
+                    .card-margin {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 12%;
+                        width: 1px;
+                        background: #d4a5a5;
+                        opacity: 0.6;
+                    }
+                    
+                    .quote-content {
                         position: relative;
                         z-index: 1;
+                        padding-top: 36px;
+                        padding-left: clamp(22px, 4.5vw, 40px);
+                        padding-right: clamp(8px, 1.5vw, 14px);
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
                     }
                     
-                    .quote-text {
+                    .typewriter-text {
                         font-family: 'Cormorant Garamond', Georgia, serif;
-                        font-size: clamp(9px, 1.2vw, 14px);
+                        font-size: clamp(11px, 1.35vw, 16px);
                         font-style: italic;
-                        color: #4a4035;
-                        line-height: 1.55;
-                        margin-bottom: 0.6em;
+                        color: #3a3530;
+                        line-height: 18px;
+                        margin-bottom: 0px;
+                        padding-bottom: 2px;
                     }
                     
-                    .quote-author {
+                    .typewriter-text::after {
+                        content: '|';
+                        animation: blink 0.8s infinite;
+                        color: #b84a2d;
+                        font-weight: 300;
+                    }
+                    
+                    @keyframes blink {
+                        0%, 50% { opacity: 1; }
+                        51%, 100% { opacity: 0; }
+                    }
+                    
+                    .typewriter-author {
                         font-family: 'IBM Plex Mono', monospace;
-                        font-size: clamp(7px, 0.85vw, 10px);
+                        font-size: clamp(8px, 0.95vw, 11px);
                         color: #8b5a42;
                         letter-spacing: 0.02em;
+                        line-height: 18px;
+                        margin-top: -2px;
+                        padding-bottom: 10px;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                    }
+                    
+                    .typewriter-author.visible {
+                        opacity: 1;
                     }
                 </style>
                 
@@ -470,23 +508,49 @@
                     ];
                     
                     let currentQuote = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+                    let isPaused = false;
                     
-                    function rotateQuotes() {
-                        const textEl = document.getElementById('quoteText');
-                        const authorEl = document.getElementById('quoteAuthor');
-                        const container = textEl.parentElement;
+                    const textEl = document.getElementById('typewriterText');
+                    const authorEl = document.getElementById('typewriterAuthor');
+                    
+                    function typeWriter() {
+                        const current = quotes[currentQuote];
                         
-                        container.style.opacity = '0';
-                        
-                        setTimeout(() => {
-                            currentQuote = (currentQuote + 1) % quotes.length;
-                            textEl.textContent = quotes[currentQuote].text;
-                            authorEl.textContent = quotes[currentQuote].author;
-                            container.style.opacity = '1';
-                        }, 600);
+                        if (!isDeleting && !isPaused) {
+                            textEl.textContent = current.text.substring(0, charIndex);
+                            charIndex++;
+                            
+                            if (charIndex > current.text.length) {
+                                authorEl.textContent = current.author;
+                                authorEl.classList.add('visible');
+                                isPaused = true;
+                                setTimeout(() => {
+                                    isPaused = false;
+                                    isDeleting = true;
+                                    typeWriter();
+                                }, 3000);
+                                return;
+                            }
+                            setTimeout(typeWriter, 35 + Math.random() * 25);
+                        } else if (isDeleting) {
+                            authorEl.classList.remove('visible');
+                            textEl.textContent = current.text.substring(0, charIndex);
+                            charIndex--;
+                            
+                            if (charIndex < 0) {
+                                isDeleting = false;
+                                currentQuote = (currentQuote + 1) % quotes.length;
+                                charIndex = 0;
+                                setTimeout(typeWriter, 500);
+                                return;
+                            }
+                            setTimeout(typeWriter, 15);
+                        }
                     }
                     
-                    setInterval(rotateQuotes, 6000);
+                    setTimeout(typeWriter, 1000);
                 </script>
                 
                 <script>
