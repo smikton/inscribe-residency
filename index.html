@@ -792,19 +792,21 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        gap: clamp(30px, 6vw, 65px);
+                        gap: 40px;
                         min-height: 70%;
                         padding-top: 1em;
-                        padding-right: clamp(20px, 5vw, 50px);
                     }
                     
                     .apply-text {
                         text-align: left;
+                        flex-shrink: 0;
+                        width: 460px;
                     }
                     
                     .index-card {
-                        width: clamp(180px, 32vw, 280px);
-                        height: clamp(105px, 18vw, 155px);
+                        flex-shrink: 0;
+                        width: 300px;
+                        height: 180px;
                         background: linear-gradient(180deg, #f7f3e3 0%, #f0ebda 50%, #e8e2d0 100%);
                         position: relative;
                         transform: rotate(-1.5deg);
